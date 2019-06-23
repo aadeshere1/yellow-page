@@ -1,0 +1,37 @@
+# require 'nokogiri'
+# require 'open-uri'
+# content = open("https://yellowpagesnepal.com/index.php?st=A")
+nokogiri = Nokogiri::HTML(content)
+
+categories = nokogiri.at_css('.cats')
+SITE = "https://yellowpagesnepal.com/"
+
+categories.each do |category|
+	link = category.xpath('.//a/@href').text
+	url = "#{SITE}#{link}"
+	name = category.text
+	item_count = name.scan(/\[([0-9]*)\]/)
+
+	pages << {
+		url: url,
+		page_type: 'categories',
+		fetch_type: 'browser',
+		force_fetch: true,
+		vars: {
+			url: url,
+			category_count: item_count,
+			name: name
+		}
+	}
+end
+
+alphabets = nokogiri.xpath('//div[@class="cat-content"]//li')
+alphabets.each do |alphabet|
+	link = alphabet.xpath('.//a/@href').text
+	url = "#{SITE}#{link}"
+	pages << {
+		url: url,
+		page_type: 'alphabets',
+		force_fetch: true
+	}
+end
