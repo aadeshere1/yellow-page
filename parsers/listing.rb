@@ -8,7 +8,7 @@ page = {}
 
 labels.take(total_data).each_with_index do |label, index|
 	key = label.text.strip.split(":").first.strip
-	value = data[index].text
+	value = data[index].text.strip
 
 	page[key] = value
 end
