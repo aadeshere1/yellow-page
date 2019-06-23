@@ -11,7 +11,9 @@ categories.each do |category|
 	url = "#{SITE}#{link}"
 	name = category.text
 	item_count = name.scan(/\[([0-9]*)\]/)
-
+	puts url
+	puts name
+	puts item_count
 	pages << {
 		url: url,
 		page_type: 'categories',
