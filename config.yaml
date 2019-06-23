@@ -5,3 +5,6 @@ parsers:
   - page_type: alphabets
     file: ./parsers/alphabets.rb
     disabled: false
+  - page_type: categories
+    file: ./parsers/categories.rb
+    disabled: false
