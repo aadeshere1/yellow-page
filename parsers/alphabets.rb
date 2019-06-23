@@ -4,7 +4,7 @@
 nokogiri = Nokogiri::HTML(content)
 
 categories = nokogiri.css('.cats')
-SITE = "https://yellowpagesnepal.com/"
+SITE = "https://www.yellowpagesnepal.com/"
 
 categories.each do |category|
 	link = category.xpath('.//a/@href').text
