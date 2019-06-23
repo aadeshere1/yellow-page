@@ -13,7 +13,7 @@ labels.take(total_data).each_with_index do |label, index|
 	page[key] = value
 end
 
-page["Related Category"] = labels.last.xpath('//a').text.strip
+page["Related Category"] = labels.last.xpath('.//a').text.strip
 page["_collection"] = "page"
 
 outputs << page
