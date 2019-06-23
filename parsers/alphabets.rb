@@ -1,6 +1,3 @@
-# require 'nokogiri'
-# require 'open-uri'
-# content = open("https://yellowpagesnepal.com/index.php?st=A")
 nokogiri = Nokogiri::HTML(content)
 
 categories = nokogiri.css('.cats')
