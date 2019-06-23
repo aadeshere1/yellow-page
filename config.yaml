@@ -8,3 +8,8 @@ parsers:
   - page_type: categories
     file: ./parsers/categories.rb
     disabled: false
+  - page_type: listing
+    file: ./parsers/listing.rb
+    disabled: false
+exporters:
+  - file: ./exporters/page_json.yaml
