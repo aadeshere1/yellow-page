@@ -3,7 +3,7 @@
 # content = open("https://yellowpagesnepal.com/index.php?st=A")
 nokogiri = Nokogiri::HTML(content)
 
-categories = nokogiri.at_css('.cats')
+categories = nokogiri.css('.cats')
 SITE = "https://yellowpagesnepal.com/"
 
 categories.each do |category|
